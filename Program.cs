@@ -1,25 +1,23 @@
-// See https://aka.ms/new-console-template for more information
-//Console.WriteLine("Hello, World!");
-
 using Forelesning2;
 
+while (true)
+{
+    Console.WriteLine("Skriv inn ID (eller exit for å avslutte):");
+    string input = Console.ReadLine();
 
-// få verdier fra brukeren i terminalen
-int idVerdi = int.Parse(Console.ReadLine());
-string navnVerdi = Console.ReadLine();
+    if (input.ToLower() == "exit")
+    {
+        Console.WriteLine("Slutt!");
+        break;
+    }
 
-// datatype (Person) variabel navn (p) = nytt objekt (new) konstruktøren Person()
-Person p = new Person();
-//p.SetId(123);
-//p.SetNavn("Espen");
-//p.VisInformasjon();
+    int id = int.Parse(input);
 
-// Skriv ut verdier som vi fikk fra brukeren
-p.SetId(idVerdi); 
-p.SetNavn(navnVerdi);
-p.VisInformasjon();
+    Console.WriteLine("Skriv inn navn:");
+    string navn = Console.ReadLine();
 
-// Bruk av Get metoden for spesifikke felt
-string pNavn = p.GetNavn();
-Console.WriteLine(pNavn);
-Console.WriteLine(p.GetNavn());
+    Person p = new Person();
+    p.SetId(id);
+    p.SetNavn(navn);
+    p.VisInformasjon();
+}
